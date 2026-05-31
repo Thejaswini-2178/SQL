@@ -13,7 +13,8 @@
             "name": "MYSQL",
             "database": "mydatabase",
             "username": "root",
-            "connectionTimeout": 30
+            "connectionTimeout": 30,
+            "password": "NewPassword123"
         }
     ]
 }
