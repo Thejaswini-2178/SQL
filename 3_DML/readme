@@ -1,0 +1,23 @@
+ Exicution Steps 
+
+ 1. first we need to drop the table bcz if any table exist due to the use of contrents it mey result dupiliketion of id entris through an error so first you should drop the table
+    ex:  DROP TABLE IF EXISTS mydatabase.table456;
+
+
+ 2. If you write multipul quris in same file like using multiple INSERTS,SELECT ,ETC you  shoud select and exicute not entir code should run(ctr+E +2 times)
+   one more thig is afr=ter complition of the insetr qury shou use to truncate like romoving the values bcz it may cause duplicate so after evey insert use like 
+   ex: TRUNCATE TABLE mydatabase.table456;
+
+
+
+ 3. Like ex : 1. first select the entire creation table run
+              2. next insert table run
+              3. then select truncate qury and run
+              4. finally select qurey to see the result like wise
+              if u select each quries then run means you wont get out put so do follow this  
+
+4. Use this 2  contrents for better Exicution
+        1. primary key for controlling  duplicate-key 
+optnal  2. INSERT IGNORE is a MySQL statement modifier that ignores duplicate-key and certain other insert errors, allowing the query to continue without failing."
+           IGNORE ante error vachina row ni skip chesi query ni continue cheyyadam 
+        
