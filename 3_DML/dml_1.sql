@@ -4,8 +4,8 @@ CREATE TABLE mydatabase.table456(
     id INT  NOT NULL,
     name varchar(20) not NULL,
     pin_code int not null,
-    country VARCHAR(30)
-    -- primary key (id)  
+    country VARCHAR(30),
+    primary key (id)  
 );
 TRUNCATE TABLE mydatabase.table456;
 
@@ -107,3 +107,25 @@ SELECT * FROM mydatabase.table456;
 INSERT INTO table456(id, name, pin_code)
 VALUES (1, 'radha', 517324);
 SELECT * FROM mydatabase.table456;
+
+
+--( insert using selct 
+-- INSERT INTO table456(id, name, country)
+-- SELECT id, first_name, country 
+-- FROM customers)
+-- it wont works bcz 👇
+
+/* INSERT lo anni column names specify cheyyalsina avasaram ledu. Kani NOT NULL and default value leni columns ki values compulsory ga ivvali.
+   1.pin_code column customers table lo ledu. Kabatti direct ga anni rows copy cheyyalem
+   2.pin_code NULL allow cheyyali leda
+   3.pin_code ki default value undali.
+   4.NULL use cheyyachu, but only if that column is allowed to store NULL values.
+*/
+SELECT * FROM customers;
+INSERT  IGNORE  INTO mydatabase.table456(id, name,pin_code,country)
+SELECT id, first_name, 23456, country 
+FROM customers;
+SELECT * FROM mydatabase.table456;
+
+
+
